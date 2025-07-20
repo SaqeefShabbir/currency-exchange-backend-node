@@ -48,6 +48,11 @@ app.use((err: any, req: any, res: any, next: any) => {
   res.status(500).json({ success: false, error: 'Something went wrong!' });
 });
 
+app.get('/', (req: any, res: any) => {
+    res.send('Hello World!')
+});
+
+
 interface CurrencyCache {
   currencies: any,
   rates: any,
