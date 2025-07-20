@@ -42,6 +42,9 @@ app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ success: false, error: 'Something went wrong!' });
 });
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 // Cache for storing currencies and rates
 let currencyCache = {
     currencies: null,
@@ -260,5 +263,5 @@ app.delete('/api/history', async (req, res) => {
 });
 // Start server
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server is running on port :${PORT}`);
 });
